@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using WebApplication1.Models;
 
 namespace WebApplication1
@@ -10,12 +11,10 @@ namespace WebApplication1
 
         public DbSet<Tarea> Tareas { get; set; }
 
-        public TareasContext(DbContextOptions<TareasContext> dbContext) { }
+        public TareasContext(DbContextOptions<TareasContext> dbContext):base(dbContext) { }
+ 
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlServer("Data Source=BYTEMASTER\\SQLEXPRESS;Initial Catalog=TareaDb;User ID=Sebastian;Password=200503; TrustServerCertificate=true;");
-        }
+
 
         protected override void OnModelCreating(ModelBuilder mb)
         {

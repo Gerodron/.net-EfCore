@@ -18,10 +18,10 @@ namespace WebApplication1.Models
         [MaxLength(200)]
         public string Descripcion {  get; set; }
 
-        [Required]
+       
         public Prioridad PrioridadTarea { get; set; }
 
-        [Required]
+      
         public DateTime FechaCreacion {  get; set; }
 
         public virtual Categoria Categoria { get; set; }
